@@ -1,0 +1,156 @@
+\documentclass[11pt]{beamer}
+\usepackage[latin1]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amssymb,amsmath,amsfonts,amsthm,mathrsfs}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{makeidx}
+\pagestyle{empty}
+
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{prop}{Propriet\`{a}}[section]
+\newtheorem{proposizione}{Proposizione}[section]
+%\newtheorem{lemma}{Lemma}[section]
+\newtheorem{convenzione}{Convenzione}[section]
+\newtheorem{der1}{Derivazione del limite}[section]
+\newtheorem{der2}{Formula di Leibnitz}[section]
+\newtheorem{der3}{Derivata della funzione composta}[section]
+
+\usetheme{Copenhagen}
+%\usecolortheme{albatros}
+
+
+\title{TESI DI LAUREA}
+\author{Federica Narciso}
+\date{}
+\subtitle{PARTI FINITE}
+\institute{Università degli studi di Torino \\Facoltà di Scienze MM.FF.NN.\\ Corso di laurea in Matematica}
+
+
+
+
+\begin{document}
+
+
+\begin{frame}
+ \maketitle
+ \begin{center}
+ \includegraphics<1>[scale=0.5]{unito}
+ \end{center}
+\end{frame}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%INTRODUZIONE
+\begin{frame}
+\frametitle{Introduzione}
+Sia $g$ una funzione reale di variabile reale. Nostro scopo è dare un significato a $\int_a ^b g(x)\,dx,$ dove $(a,b)$ è un intervallo finito, nel caso in cui la definizione di integrale improprio di Riemann non sia sufficiente. Supporremo, in particolare, che nel punto $a$ tale integrale sia \textit{divergente.} Secondo un'idea introdotta da Hadamard nel 1932 si osserva che, sotto certe ipotesi,
+$$\int_{a+\epsilon}^b g(x)\, dx $$
+E' somma di alcune quantità che divergono per $\epsilon\to 0$ e di altre che, al contrario, per $\epsilon\to 0$ convergono. Indicate queste ultime con $F(\epsilon),$ sarà
+$$\lim_{\epsilon\to 0}F(\epsilon)$$
+la \textit{parte finita} dell'integrale.
+\end{frame}
+
+
+
+
+%%\begin{frame}
+%%\frametitle{Introduzione}
+%%%Inoltre:
+%%%%%%%\begin{itemize}
+%%\item Si studieranno le propriet‡ fondamentali di tali parti finite.
+%%\item  Si vedranno i concetti principali inerenti la teoria delle distribuzioni.
+%%%\item Si vedr‡ quando Ë possibile definire
+ %%%$$Pf.\int_{-\infty}^{+\infty} g(x)v(x)\,dx.$$ Tale parte
+%%%finita, chiamata pseudofunzione, Ë una distribuzione.
+%%\item Si daranno le regole per il calcolo delle parti finite e delle loro derivate.
+%%\end{itemize}
+%%%%\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PARTI FINITE
+\begin{frame}
+\frametitle{Le Parti Finite}
+%\begin{block}
+\begin{definizione}
+
+Sia $g:(a,b)\subset\mathbf{R}\rightarrow\mathbf{R}$ con $(a,b)$ intervallo finito.
+Sia la funzione $g$ integrabile su ogni intervallo finito $(a+\epsilon,b)$ per ogni $\epsilon>0$, ma non integrabile su tutto $(a,b)$.\\
+Supponiamo che $g$ sia rappresentabile come somma di una funzione $h$ integrabile su $(a,b)$ e di un polinomio in $\frac{1}{x-a}$, ovvero:
+\begin{equation}
+g(x)=P\left( \frac{1}{x-a} \right) + h(x) = \sum_\nu \frac{A_\nu}{(x-a)^{\lambda_\nu}} + h(x)
+\end{equation}
+con $A_\nu \in \mathbf{R}, \lambda_\nu \in \mathbf{R}.$\\
+\noindent Allora si definisce la \textbf{parte finita dell'integrale} $\mathbf{\int_a^b g(x)\,dx}$ come:
+
+\begin{displaymath}
+F = Pf.\int_a^b g(x) \,dx= -\sum_\nu \frac{A_\nu}{\lambda_\nu -1}\left( \frac{1}{b-a}\right) ^{\lambda_\nu -1} +\int_a^b h(x) \,dx
+\end{displaymath}
+
+\end{definizione}
+\end{frame}
+
+\begin{frame}
+\frametitle{Le Parti Finite}
+\begin{definizione}
+per $\lambda_\nu$ non interi,
+\begin{align}
+F &= Pf.\int_a^b g(x) \,dx = \notag \\
+& =-\sum_{\nu\ne 1} \frac{A_\nu}{\lambda_\nu -1}\left( \frac{1}{b-a}\right) ^{\lambda_\nu -1}+A_1\log (b-a) +\int_a^b h(x) \,dx
+\notag
+\end{align}
+per $\lambda_\nu$ interi, dove $A_1$ è il coefficiente del termine di primo grado del polinomio P.
+
+
+\end{definizione}
+
+%\end{block}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFIA
+
+\begin{frame}
+\frametitle{Bibliografia}
+\begin{thebibliography}{4}
+
+
+\bibitem{I.M. Gel'fand G.E.Shilov}
+I.M. Gel'fand \& G.E. Shilov, \emph{Generalized functions}, Academic Press, 1964.
+
+
+\bibitem{bouix}
+M. Bouix, \emph{Les fonctions g\'{e}n\'{e}ralis\'{e}es ou distributions}, Masson Editore, 1964.
+
+
+\bibitem{tricomi}
+F.G. Tricomi, \emph{Istituzioni di analisi superiore}, Cedam, 1970.
+
+
+
+\bibitem{bureau}
+F.J. Bureau \emph{Divergent integrals and partial differential equations}, Communications on Pure and Applied Mathematics, 1955.
+\end{thebibliography}
+\end{frame}
+
+
+
+
+
+\end{document} 

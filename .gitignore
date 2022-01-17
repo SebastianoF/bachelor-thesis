@@ -1,0 +1,7 @@
+*.toc
+*.log
+*.aux
+*.nav
+*.out
+*.snm
+*.DS_Store

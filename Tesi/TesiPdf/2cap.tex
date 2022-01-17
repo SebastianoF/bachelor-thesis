@@ -1,0 +1,385 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%CAPITOLO NUMERI EUCLIDEI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Numeri euclidei}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% SEZIONE %%%%%%%%%%%%
+\section{Costruzioni euclidee nel piano reale}
+Ora che si ha una definizione formale delle costruzioni euclidee, intese come successioni di punti, rette e circonferenze fra loro correlate, è necessario esprimere la loro interazione con i punti del piano reale e quindi le proporietà, in termini algebrici, di questa struttura.
+
+%%% Def della funzione principale
+\begin{definizione} \label{immers}
+L'insieme delle possibili costruzioni euclidee, aventi $P_0$ e $P_1$ come punti iniziali, indicato con $\mathcal{E}(P_0,P_1)$, può essere immerso nel piano $\mathbb{R}\times\mathbb{R}$, definendo la seguente funzione:
+\begin{align*} 
+\mathcal{I}:  \mathcal{E}(P_0,P_1) & \longrightarrow \mathbb{R}\times\mathbb{R} 
+\end{align*}
+%itemize della definizione
+\begin{enumerate}
+
+\item Se $K_{i} \in \mathcal{E}(P_0,P_1) $ è uno dei due punti iniziali $P_0$ o $P_1$, allora 
+\begin{align*} 
+\mathcal{I}:  \mathcal{E}(P_0,P_1) & \longrightarrow \mathbb{R}\times\mathbb{R} \\
+P_0 & \longmapsto (0,0) \\
+P_1 & \longmapsto (1,0) \\
+\end{align*}
+
+\item Se $K_{i} \in \mathcal{E}(P_0,P_1)$ è una retta fra due punti $K_{m}$ e $K_{n}$, allora 
+\begin{align*} 
+\mathcal{I}:  \mathcal{E}(P_0,P_1) & \longrightarrow \mathbb{R}\times\mathbb{R} \\
+K_{i}  & \longmapsto R_{i} (  \mathcal{I} (K_{m}), \mathcal{I}(K_{n}) ) 
+\end{align*}
+Quindi la retta per i due punti $K_{m}, K_{n}$ di $\mathcal{E}(P_0,P_1)$ viene mappata da $ \mathcal{I}$ nella retta su $\mathbb{R}\times\mathbb{R}$ passante per le immagini dei medesimi punti $K_{m}, K_{n} $, cioè $ \mathcal{I} (K_{m}), \mathcal{I}(K_{n}) $.
+
+\item Se $K_{i} \in \mathcal{E}(P_0,P_1)$ è una circonferenza di centro $K_{c}$ e di raggio il segmento avente per estremi i punti $K_{r}$ e $K_{s}$, allora 
+\begin{align*} 
+\mathcal{I}:  \mathcal{E}(P_0,P_1) & \longrightarrow \mathbb{R}\times\mathbb{R} \\
+K_{i}  & \longmapsto C_{i} (  \mathcal{I} (K_{c}); \overline{  \mathcal{I}(K_{r}) \mathcal{I}(K_{s})})
+\end{align*}
+
+\item Se $K_{i} \in \mathcal{E}(P_0,P_1)$ è un punto di intersezione fra due circonferenze $C_{a}$, $C_{b}$, oppure di due rette $R_{a}$, $R_{b}$, oppure di una retta $R_{a}$ e una circonferenza $C_{b}$, allora si ha rispettivamente
+\begin{align*} 
+\mathcal{I}:  \mathcal{E}(P_0,P_1) & \longrightarrow \mathbb{R}\times\mathbb{R} \\
+K_{i}  & \longmapsto P_{i} ( \mathcal{I}(C_{a}),   \mathcal{I}(C_{b})) \\
+K_{i}  & \longmapsto P_{i} ( \mathcal{I}(R_{a}),   \mathcal{I}(R_{b})) \\
+K_{i}  & \longmapsto P_{i} ( \mathcal{I}(R_{a}),   \mathcal{I}(C_{b})) 
+\end{align*}
+\end{enumerate}
+
+Si ottiene quindi l'insieme delle costruzioni euclidee con unità di misura iniziale pari a $1$ immersa nel piano reale. I suoi elementi saranno chiamati \begin{bfseries}costruzioni euclidee nel piano reale\end{bfseries} e saranno indicati con $\mathcal{E}_{\mathbb{R}\times\mathbb{R}}$. 
+\end{definizione} 
+
+%%%%% Osservazio sulla biezione
+\begin{osservazione}
+La definizione precedente garantisce l'esistenza di una biiezione fra i punti, le rette e le circonferenze  delle costruzioni euclidee, con quelle disegnate sul piano reale.
+\begin{align*}
+\mathcal{I}:  \mathcal{E}(P_0,P_1) & \longrightarrow   \mathcal{E}_{\mathbb{R}\times\mathbb{R}} \subset \mathbb{R}\times\mathbb{R} 
+\end{align*}
+Ad ogni punto delle costruzioni euclidee corrisponde quindi un solo punto delle costruzioni euclidee nel piano reale.
+\end{osservazione}
+
+%% def di punti euclidei
+\begin{definizione}
+Un punto $Q$ di $\mathbb{R}\times\mathbb{R}$ che compare in una costruzione euclidea nel piano, cioè tale che $Q \in \mathcal{E}_{\mathbb{R}\times\mathbb{R}}$ è detto \begin{bfseries}punto euclideo\end{bfseries}  o costruibile. L'insieme di tutti i punti euclidei sarà indicato con $\mathfrak{E}$.
+\end{definizione}
+
+\begin{osservazione} \label{osservaz}
+L'insieme di punti $\mathbb{Z}\times \mathbb{Z} := \{(m,n) \mid m \in \mathbb{Z}, n \in \mathbb{Z}\}$ è un sottoinsieme di $\mathfrak{E}$, infatti, come visto in \ref{carte}, a partire dai punti iniziali $P_0$ e $P_1$ è possibile costruire un sistema di assi cartesiani ortogonali, i cui punti vanno a ricalcare $\mathbb{Z}\times \mathbb{Z}$ nelle costruzioni euclidee nel piano reale.
+\end{osservazione}
+
+Si presentano ancora le definizioni di numero reale euclideo e numero complesso euclideo, strettamente correlate con la definizione di punto euclideo:
+
+%%%%%%%%%%%%%% Numero reale Euclideo
+\begin{definizione}
+$\gamma \in \mathbb{R}$ è detto \begin{bfseries}numero reale euclideo\end{bfseries} se esiste una costruzione euclidea nel piano reale nella quale compare un segmento di lunghezza $|\gamma|$.
+\end{definizione}
+
+%%%%%%%%%%% Numero complesso  Euclideo
+\begin{definizione}
+$a + i b \in \mathbb{C}$ è detto \begin{bfseries}numero complesso euclideo\end{bfseries} se il corrispondente punto $(a, b) \in \mathbb{R}\times\mathbb{R}$ appartiene ad una costruzione euclidea nel piano reale.
+\end{definizione}
+
+%%%%%%%%%%%%% Osservazione reali-complessi
+\begin{osservazione}
+Si osserva che un punto è euclideo se e solo se lo sono le sue rispettive coordinate nel piano reale. Infatti dato $P$ euclideo nel piano reale, è sempre possibile tracciare le rette parallele agli assi (\ref{parall}), e passanti per $P(a, b)$. Queste rette tagliano sugli assi due segmenti di lunghezza $|a|$ e $|b|$, quindi $a$ e $b$ sono numeri reali euclidei. Viceversa se $a$ e $b$ sono due numeri euclidei, allora posso sempre costruire i segmenti di lunghezza $|a|$ e $|b|$. Una volta tracciati, rispettivamente sull'asse $x$ e sull' asse $y$, si ottengono i numeri complessi euclidei $a$ ed $ ib$. Tracciando le rette parallele agli assi, e passanti per $a$ e $ ib$ si ottiene il punto di intersezione $P(a,b)$, che è quindi costruibile. 
+Questo significa che si può parlare in modo equivalente di punti euclidei e numeri reali euclidei sul piano reale.
+\end{osservazione}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% SEZIONE %%%%%%%%%%%%%%%%%%%%
+\section{Caratterizzazione di $\mathfrak{E}$} 
+Lo scopo del paragrafo precedente è stato la definizione di $\mathfrak{E}$; in questo verranno analizzate le sue proprietà, tratte da \cite{cattaneo} e \cite{Procesi}, e ne verrà data una caratterizzazione algebrica.
+
+% proprietà di caratterizzazione di E come campo
+\begin{prop} \label{propcaratt}
+Dato $\mathfrak{E}$, insieme dei punti euclidei del piano reale, si ha che
+\begin{enumerate} [i)]
+\item $\mathbb{Z} \subset \mathfrak{E}$ 
+\item $\mathbb{Q} \subset \mathfrak{E}$
+\item $\mathfrak{E}$ è un campo.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\begin {enumerate} [i)]
+\item Segue da \ref{osservaz}.
+\item E' sufficiente provare che ogni numero della forma $1/n$ è costruibile. Segue da \ref{segm}.
+\item Per provare che $\mathfrak{E}$ è un campo, si deve dimostrare che vale l'implicazione
+\begin{equation}
+\forall \alpha, \beta \in\mathfrak{E} \Rightarrow \alpha \pm \beta \in \mathfrak{E}  \wedge  \alpha\beta\in \mathfrak{E}  \wedge \alpha / \beta \in \mathfrak{E}
+\end{equation}
+Segue da \ref{segm}. 
+\end{enumerate}
+\end{proof}
+
+%osservazione su E come estensione di grado due
+\begin{osservazione} \label{osscaratt}
+Da \ref{radi} si ha la seguente importante proposizione per le costruzioni euclidee: se un numero $z$ è costruibile allora lo è anche la sua radice quadrata.
+\begin{align*}
+\forall z \in \mathfrak{E} \Rightarrow \sqrt{z} \in \mathfrak{E}
+\end{align*}
+\end{osservazione}
+
+%%%%%%%%%%%% primo ragionamento
+\noindent
+Per l'osservazione \ref{osscaratt}, e per la proprietà \ref{propcaratt} si può affermare che:
+\begin{align*}
+\forall q_0 \in \mathbb{Q} \Rightarrow \sqrt{q_0} \in \mathfrak{E}
+\end{align*}
+\noindent
+Quindi
+\begin{align*}
+\mathbb{Q} \subset \mathbb{Q}(\sqrt{q_0}) \subset \mathfrak{E}
+\end{align*}
+\noindent
+dove $\mathbb{Q}(\sqrt{q_0})$ è il più piccolo campo che estende $\mathbb{Q}$ contenente $\sqrt{q_0}$.
+
+%%%%%%%%%%%%% secondo ragionamento
+\noindent
+Ripetendo il ragionamento precedente, si ha che
+\begin{align*}
+\forall q_1 \in \mathbb{Q}(\sqrt{q_0}) \Rightarrow q_1 \in \mathfrak{E} \Rightarrow \sqrt{q_1} \in \mathfrak{E}
+\end{align*}
+\noindent
+Quindi si può affermare che: 
+\begin{align*}
+\mathbb{Q}\subset \mathbb{Q}(\sqrt{q_0}) \subset  \mathbb{Q}(\sqrt{q_0},\sqrt{q_1}) \subset \mathfrak{E}
+\end{align*}
+\noindent
+%%%%%%%%%%% terzo ragionamento
+Ripetendo ancora il ragionamento, si ha che
+\begin{align*}
+\forall q_2 \in \mathbb{Q}(\sqrt{q_0},\sqrt{q_1})  \Rightarrow q_2 \in \mathfrak{E} \Rightarrow \sqrt{q_2} \in \mathfrak{E}
+\end{align*}
+
+\noindent
+Quindi si può affermare che 
+\begin{align*}
+\mathbb{Q}\subset \mathbb{Q}(\sqrt{q_0}) \subset  \mathbb{Q}(\sqrt{q_0},\sqrt{q_1}) \subset \mathbb{Q}(\sqrt{q_0},\sqrt{q_1}, \sqrt{q_2}) \subset \mathfrak{E}
+\end{align*}
+\noindent
+In questo modo si può continuare ad estendere il campo $\mathbb{Q}$ indefinitamente, ottenendo sempre un sottocampo di $\mathfrak{E}$.
+%%%%%%%%%%%% finale de ragionamento
+\\
+
+L'idea appena presentata serve a caratterizzare ulteriormente $\mathfrak{E}$, come una successione di estensioni di campi. Inoltre esso fornisce delle informazioni di fondamentale importanza sul grado di queste estensioni; infatti $[ \mathbb{Q}(\sqrt{q_0}), \mathbb{Q}] \leq 2$ e  $ [ \mathbb{Q}(\sqrt{q_0},\sqrt{q_1}), \mathbb{Q}(\sqrt{q_0})] \leq 2  $.
+%%%%%%%%%%% intro al teorema  con FOOTNOTE!!!! %%%%%%%%%%%
+\\ \\
+Il prossimo teorema\footnote{Presentato in: \cite{cattaneo} Proposizione $7.1.10$ di  pag. 345,  \cite{Procesi} Teorema $7.4$ di pag. $23$, \cite{Artin} Teorema $4.9$  pag. 504. Si segue la dimostrazione di \cite{Procesi}. }, enuncia in modo formale quanto detto fino ad ora. 
+
+%%%%%%%%%  teorema fondamentale
+\begin{teorema} \label{tfond}
+Un numero complesso $\alpha$ è euclideo se e solo se esiste una successione di campi 
+\begin{align*}
+\mathbb{Q} = \mathbb{E}_0 \subseteq \mathbb{E}_1 \subseteq ... \subseteq  \mathbb{E}_{n+1}  
+\end{align*}
+\noindent
+che soddisfi le due condizioni seguenti:
+\begin{enumerate}
+\item $\alpha \in  \mathbb{E}_{n+1}$
+\item $[\mathbb{E}_{j+1}, \mathbb{E}_{j}] \leq 2 \qquad j = 0, 1, ... , n $
+\end{enumerate}
+\end{teorema}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%inizio dimostrazione RIGHT
+\begin{proof}
+$\Rightarrow)$ Per ipotesi $\alpha = a+ ib$ è euclideo, quindi esiste una costruzione euclidea in cui compare il punto $P = (a,b)$, indicata con $(K_0, K_1, ..., K_n = P)$. 
+
+%%%%%%%% Enumerazione 1
+\begin{enumerate}
+
+\item Si costruisce per induzione una successione di campi $\mathbb{Q} = \mathbb{E}_0 \subseteq \mathbb{E}_1 \subseteq ... \subseteq  \mathbb{E}_{n+1}$ che soddisfa la condizione $1$. Sia quindi $\mathbb{E}_j$ campo già costruito che verifica la condizione $1$, allora il successivo $\mathbb{E}_{j+1}$ lo si costruisce nel seguente modo: si considera il corrispondente elemento $K_{j+1}$ della costruzione euclidea.
+
+%%%%%%%%% inizio Itemize 1.1
+\begin{itemize}
+
+\item Se $K_{j+1}$ è una retta o una circonferenza, si pone $\mathbb{E}_{j+1}=\mathbb{E}_{j}$
+
+\item Se $K_{j+1}$ è un punto di coordinate $(c,d)$, si pone  $\mathbb{E}_{j+1}=\mathbb{E}_{j}(c,d)$, cioè l'estensione di $\mathbb{E}_{j}$ con i reali $(c,d)$.
+
+\item Quando si è arrivati al penultimo campo, cioè $\mathbb{E}_{n}$, lo si estende con $\mathbb{E}_{n+1}=\mathbb{E}_{n}(i)$, dove i è l'unità immaginaria. Infatti, dato che $K_n = P = (a,b)$, e per il fatto che $i \in \mathbb{E}_{n+1}=\mathbb{E}_{n}(i) = \mathbb{E}_{n-1}(a,b)(i)$, si ha che $\alpha \in \mathbb{E}_{n+1}$.
+
+\end{itemize}
+%%%%%%%%%%%%% fine itemize 1.1
+
+Prima di affrontare la dimostrazione del punto $2$ si prova che, se $K_{j}$ è una retta o una circonferenza allora la sua equazione cartesiana può essere scelta a coefficienti in $\mathbb{E}_k$
+
+%%%%%%%%%%%%% inizio Itemize 1.2
+\begin{itemize}
+
+\item Se $K_{j}$ è una retta, allora passa per due punti della successione dati da $K_{s}$,  $K_{t}$ con $s,t \leq k$. La formula della retta per due punti, nota dalla geometria analitica, si basa sulle coordinate di $K_{s}$ e $K_{t}$, che sono rispettivamente nei campi $\mathbb{E}_s$, $\mathbb{E}_t$ e quindi nel campo $\mathbb{E}_j$.
+
+\item Se $K_{j}$ è una circonferenza, analogamente, il centro e gli estremi del segmento di lunghezza del raggio sono dati da $K_{s}$, $K_{t}$ e $K_{u}$, con $s,t,u \leq k$. La formula della circonferenza ha come coefficienti elementi nei rispettivi campi $\mathbb{E}_s$, $\mathbb{E}_t$, $\mathbb{E}_u$ e quindi nel campo $\mathbb{E}_j$.
+
+\end{itemize}
+%%%%%%%%%%%%% fine itemize 1.2
+
+%%% dim punto 2)
+\item Si costruisce per induzione una successione di campi $\mathbb{Q} = \mathbb{E}_0 \subseteq \mathbb{E}_1 \subseteq ... \subseteq  \mathbb{E}_{n+1}$ che soddisfa la condizione $2$. Si dimostra che  $[\mathbb{E}_{j+1}, \mathbb{E}_{j}] \leq 2 $ per $j = 0, 1, ... , n$.
+Si distinguono i seguenti tre casi:
+
+%%%%%%%%%%%%% inizio Itemize 1.3
+\begin{itemize}
+
+\item Se $K_{j}$ è una retta o una circonferenza, si ha dal punto precedente che $\mathbb{E}_{j}=\mathbb{E}_{j-1}$ da cui segue $[\mathbb{E}_{j}, \mathbb{E}_{j-1}] = 2$.
+
+\item Se $K_{j}$ è un punto allora può essere intersezione di due rette, di una retta e una circonferenza o di due circonferenza o di due circonferenze; si distinguono quindi i seguenti sottocasi:
+
+%%%%%%%%%%%%%%%%%%%%% inizio enumerate 1.2.1
+\begin{enumerate} [i)]
+
+ \item  $K_{j}$ è intersezione di due rette, $K_{s}$, $K_{t}$ con $s,t \leq j$ allora, per quanto visto prima, si ha che le equazioni cartesiane delle due rette $K_{s}$ e $K_{t}$ sono a coefficienti in $\mathbb{E}_{j}$. Quindi le coordinate di $K_{j}$, ottenute risolvendo il sistema fra le due rette, sono in $\mathbb{E}_{j}$. Si ha che $[\mathbb{E}_{j}, \mathbb{E}_{j-1}] = 1$.
+
+\item  $K_{j}$ è intersezione di una retta $K_{s}$ e una circonferenza, $K_{t}$ con $s,t \leq j$, le sue coordinate sono la soluzione del sistema:
+
+\begin{displaymath}
+ \left\{ \begin{array}{ll}
+ K_{s}: ax + by + c = 0                             &     a,b,c \in \mathbb{E}_{j-1} \\
+ K_{t}: x^2 + y^2 +dx + ey + f = 0           &     d,e,f \in \mathbb{E}_{j-1}
+ \end{array} \right.
+ \end{displaymath}
+ 
+Per quanto visto prima i coefficienti $a,b,c,d,e,f$  sono tutti in $\mathbb{E}_{j}$. Se per esempio $a \neq 0$ (o analogamente $b \neq 0$), per sostituzione si ottiene il sistema :
+
+\begin{displaymath}
+ \left\{ \begin{array}{ll}
+ x = -(b/a)y - (c/a)                          &     a,b,c \in \mathbb{E}_{j-1} \quad a \neq 0 \\
+ y^2 + ly + m = 0                           &     l,m \in \mathbb{E}_{j-1}
+ \end{array} \right.
+ \end{displaymath}
+ 
+L'equazione $y^2 + ly + m = 0$ può essere risolubile in $\mathbb{E}_{j-1}$ o meno. Si distinguono allora gli ulteriori due sottocasi:
+
+%%%%%%%%%%%%%%%%%%% Inizio itemize 1.2.1.1
+\begin{itemize}
+ 
+ \item Se $y^2 + ly + m = 0$ è risolubile in $\mathbb{E}_{j-1}$ (quindi il corrispondente polinomio è riducibile in $\mathbb{E}_{j}$ ), allora si ha che $\mathbb{E}_{j} = \mathbb{E}_{j-1}$. Cioè $[\mathbb{E}_{j}, \mathbb{E}_{j-1}] = 1$.
+ 
+ \item Se $y^2 + ly + m = 0$ non è risolubile in $\mathbb{E}_{j-1}$ (quindi il corrispondente polinomio, essendo di secondo grado, non è riducibile in $\mathbb{E}_{j-1}$ ), allora la soluzione del sistema estenderà il campo $\mathbb{E}_{j-1}$ con il campo $\mathbb{E}_{j}$ contenente le radici
+ 
+\begin{displaymath}
+\left\{ \begin{array}{ll}
+y_1 = -l -\sqrt{l^2 - 4m}                        &     l,m \in \mathbb{E}_{j-1}  \\
+y_2 = -l +\sqrt{l^2 - 4m}                     &     l,m \in \mathbb{E}_{j-1}
+\end{array} \right.
+\end{displaymath}
+
+Cioè $\mathbb{E}_{j}  =  \mathbb{E}_{j-1} (\sqrt{l^2 - 4m}))$. Ma questo implica $[\mathbb{E}_{j}, \mathbb{E}_{j-1}] = 2$.
+ 
+\end{itemize}
+ 
+\item  $K_{j}$ è intersezione di due circonferenze $K_{s}$,  $K_{t}$ con $s,t \leq k$. Il ragionamento è analogo al precedente, si ha infatti il sistema:
+
+\begin{displaymath}
+ \left\{ \begin{array}{ll}
+ K_{s}: x^2 + y^2 + ax + by + c = 0         &     a,b,c \in \mathbb{E}_{j-1} \\
+ K_{t}: x^2 + y^2 +dx + ey + f = 0           &     d,e,f \in \mathbb{E}_{j-1}
+ \end{array} \right.
+ \end{displaymath}
+
+Che equivale a 
+\begin{displaymath}
+ \left\{ \begin{array}{ll}
+ K_{s}: x^2 + y^2 + ax + by + c = 0         &     a,b,c \in \mathbb{E}_{j-1} \\
+ K_{t}: (a-d)x + (b-e)y + (c-f) = 0           &     d,e,f \in \mathbb{E}_{j-1}
+ \end{array} \right.
+ \end{displaymath}
+ 
+ Riconducibile direttamente al caso precedente.
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%% fine enumerate 1.2.1
+
+\item L'ultimo passo dell'induzione, cioè quando sono stati costruiti tutti i campi, tranne l'ultimo, e $\mathbb{E}_{n}$ soddisfa la condizione $2$, allora, dato che $\mathbb{E}_{n+1}$ è stato definito come $\mathbb{E}_{n}(i)$, si ha $[\mathbb{E}_{n}(i), \mathbb{E}_{n}] =[\mathbb{E}_{n+1}, \mathbb{E}_{n}] =  2$.
+
+\end{itemize}
+%%%%%%%%%%%%% fine itemize 1.3
+
+\end{enumerate}
+%%%%%%%%%%%%% Fine enumerazione 1
+Quindi la condizione necessaria del teorema è dimostrata.
+\end{proof}
+%%%%%%%%%%%%%%%%%%%%%%%% Fine dimostrazione RIGHT
+
+%%%%%%%%%%%%%%%inizio dimostrazione LEFT
+\begin{proof} $\Leftarrow$)
+Per terminare la dimostrazione, si deve ancora verificare che se valgono le condizioni $1$ e $2$, cioè se  
+\begin{align*}
+\alpha \in \mathbb{E}_{n+1} \supseteq \mathbb{E}_{n} \supseteq ...  \supseteq \mathbb{E}_{1} \supseteq \mathbb{E}_{0} = \mathbb{Q}
+\end{align*}
+e se 
+\begin{align*}
+[\mathbb{E}_{j}, \mathbb{E}_{j-1}]  \leq  2  \qquad j = 1, 2 , ... , n+1
+\end{align*}
+allora $\alpha$ è euclideo.
+Si procede di nuovo per induzione. Sia $\alpha_{j-1}$ elemento di $\mathbb{E}_{j-1}$, euclideo, e quindi $(j-1)$-esimo della costruzione euclidea $(K_0, K_1, ..., K_{j-1} = \beta)$. Il punto successivo a $\alpha_{j-1}$, nella costruzione euclidea, indicato con $\alpha_{j}$, appartiene al campo $\mathbb{E}_{j}$ e, dato che per ipotesi $[\mathbb{E}_{j}, \mathbb{E}_{j-1}]  \leq  2$, $\alpha_{j-1}$ è algebrico su $\mathbb{E}_{j-1}$  di grado $1$ o $2$
+%%% footnote:
+\footnote{infatti il grado del polinomio minimo del generico $a$ su $\mathbb{K}$ divide $[\mathbb{F}, \mathbb{K}]$, per $\mathbb{F}$ estensione finita di $\mathbb{K}$ }. 
+%%%%%
+Si hanno quindi i due casi:
+
+%%%% inizio itemize X
+\begin{itemize}
+
+\item Se il grado di $\alpha_{j-1}$ è 1, allora $\gamma \in \mathbb{E}_{j}$ e quindi $\alpha_{j-1}$ è euclideo anche su $\mathbb{E}_{j}$.
+
+\item Se il grado di $\alpha_{j-1}$ è 2, allora verifica una equazione del tipo $x^2 + bx + c =  0$ con $b,c \in \mathbb{E}_{j-1}$. Ma dato $a^2-4b$ è sempre possibile costruire un segmento di lunghezze $\sqrt{a^2-4b}$, come visto in \ref{radi}, quindi $\gamma \in \mathbb{E}_{j} = \mathbb{E}_{j-1}(\sqrt{a^2-4b})$. Questo significa che $\alpha_{j-1}$ è euclideo anche su $\mathbb{E}_{j}$
+\end{itemize}
+%%%%% fine itemize X
+
+Tutti i successivi $\alpha_{k}$, fino ad arrivare ad $\alpha$ in $\mathbb{E}_{n+1}$ sono euclidei. Quindi la condizione sufficiente del teorema è dimostrata.
+\end{proof}
+%%%%%%%%%%%%%%%Fine  dimostrazione LEFT
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% Fine dimostrazione teorema fondamentale
+
+%%%%%%%%%%%%%%%%%%%%%%% SEZIONE %%%%%%%%%%%%%%%%%%%
+\section{Conseguenze}
+
+Nel paragrafo precedente è stato caratterizzato $\mathfrak{E}$ come campo che contiene tutti i possibili sottocampi, dati da $\mathbb{Q}(\alpha_1, \alpha_2, ... , \alpha_m)$, in cui si trovano i possibili numeri euclidei.
+In particolare si ha che un numero reale $\gamma$ appartiene a $\mathfrak{E}$ solo se appartiene a $\mathbb{Q}(\alpha_1, \alpha_2, ... , \alpha_m)$, per $\alpha_i$ da determinare. 
+\\ \\
+Da queste considerazioni si hanno i seguenti corollari:
+
+%%%%% corollario su quanto detto nel paragrafo precedente 7.5,     
+\begin{corollario}\footnote{Da \cite{Procesi} Corollario $7.5$ di pag. $25$} \label{corolla}
+Se $\alpha \in \mathbb{C}$ è euclideo, allora $\alpha$ è algebrico di grado $2^k$ per un opportuno naturale k.
+\end{corollario}
+
+\begin{proof}
+Tenendo conto della formula $[\mathbb{E}, \mathbb{K}]=[\mathbb{E}, \mathbb{F}][\mathbb{F}, \mathbb{K}]$, si ha, per la successione di campi $\mathbb{Q} = \mathbb{E}_0 \subseteq \mathbb{E}_1 \subseteq ... \subseteq  \mathbb{E}_{n+1}$ determinata da $\alpha$ con il procedimento costruttivo enunciato in \ref{tfond}, $[\mathbb{E}_{n+1}, \mathbb{Q}] = 2^s$ per $s$ opportuno. Quindi si ha che $\alpha \in \mathbb{E}_{n+1}$ è algebrico ed il suo grado divide $2^s$ cioè  equivale a $2^k$ per qualche $k$.
+\end{proof}
+
+%%%%%%% OSSERVAZIONE
+\begin{osservazione}\footnote{Da \cite{Procesi} Esempio $6.9$ di pag. 18}
+Si ricordi che il grado di una estensione algebrica semplice è uguale al grado del polinomio minimo dell'elemento algebrico mediante il quale si fa l'estensione.
+\end{osservazione}
+
+
+%%%%% corollario su quanto detto nel paragrafo precedente 7.1.12
+\begin{corollario}\footnote{Da \cite{cattaneo} Proposizione $7.1.12$ di pag. 346} \label{corollb}
+Se un numero reale $\beta$ è radice di un polinomio irriducibile di grado $n$ che non è una potenza di $2$, allora $\beta$ non è un numero euclideo.
+\end{corollario}
+
+\begin{proof}
+Sia $\beta$ numero reale radice di un polinomio irriducibile $f(x)$ di grado $n$, allora $f(x)$ è il suo polinomio minimo. Da ciò, segue che $[\mathbb{Q}(\beta), \mathbb{Q}] = n \neq 2^k$, quindi $\alpha$ non può appartenere ad un ampliamento algebrico di grado una potenza di 2, come dovrebbe avvenire se $\beta$ fosse costruibile.
+\end{proof}
+
+
+% LABELS
+
+%\label{immers}
+%\label{osservaz}
+%\label{propcaratt}
+%\label{tfond}
+%\label{corolla}
+%\label{corollb}
+
+
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+\chapter{Tre problemi impossibili}
+
+In quest'ultimo capitolo si affronta il tema centrale di questa tesi. Si hanno infatti le basi per dimostrare rigorosamente che, con il solo uso di riga e compasso, non è possibile trovare il lato di un cubo avente volume doppio di un cubo dato, suddividere un angolo dato in tre angoli uguali e costruire un quadrato di area uguale a quella di un cerchio dato.
+
+
+%%%%%%%%%%%%%%%%%%%%% SEZIONE
+\section{Duplicazione del cubo}
+Dato un cubo di lato $l$ e di volume $l^3 = v$, per costruirne uno di volume doppio di lato $l'$, si deve tracciare un segmento che soddisfi la seguente equazione
+
+\begin{align*}
+l'^3 = 2v
+\end{align*}
+
+Quindi $l' = \sqrt[3]{2v}$. Possiamo sempre porre $l = 1$ utilizzando l'unità di misura $l$ come il segmento di lunghezza $P_0 P_1$, da cui si ha $v = 1$, e quindi 
+
+\begin{align*}
+l' = \sqrt[3]{2}
+\end{align*}
+
+Questo implica che $l'$ soddisfa il polinomio $x^3 - 2$ irriducibile su $\mathbb{Q}$; per il corollario \ref{corollb} $l'$ non è costruibile.
+
+
+%%%%%%%%%%%%%%%%%%%%% SEZIONE
+\section{Trisezione dell'angolo}
+Non tutti gli angoli dati possono essere sempre trisecati: sia ad esempio\footnote{Da \cite{cattaneo} pag. $347$. } $\alpha = 3\theta = \pi / 3$, allora costruire l'angolo di $\theta = \pi / 9$ equivale a costruire $cos(\pi / 9)$. 
+Dalle note relazioni trigonometriche si ottiene
+\begin{align*}
+cos(3\theta) = 4 cos^3(\theta) - 3 cos(\theta)
+\end{align*}
+
+Da cui per $3\theta = \pi / 3$, si ha che
+\begin{align*}
+1/2 = 4 cos^3(\pi / 9) - 3 cos(\pi / 9)
+\end{align*}
+
+Quindi $cos(\pi / 9)$ soddisfa il polinomio 
+\begin{align*}
+8x^3 - 6x - 1 = 0 
+\end{align*}
+
+\noindent
+irriducibile su $\mathbb{Q}$, di grado $3$. Quindi per il corollario \ref{corolla} $cos(\pi / 9)$ non è costruibile.
+\\\\
+Alcuni angoli possono essere trisecati; ad esempio quello di $(3/4)\pi$ formato dalle semirette $r_1$ ed $r_2$. Con il procedimento \ref{perp} e \ref{bisett} è possibile costruire prima una retta $s_1$ perpendicolare a $r_1$ e poi la bisettrice di $r_1$ ed $s_1$, indicata con $s_2$. In questo modo l'angolo fra $r_1$ ed $r_2$ è trisecato dalle rette $s_1$ ed $s_2$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% TRASCENDENZA DI e
+\section{Trascendenza di $e$ e di $\pi$} \label{trascendenzapi}
+
+La necessità di determinare se un dato numero sia algebrico, cioè radice di un polinomio a coefficienti interi, o viceversa trascendente, si presentò per la prima volta a metà del 1800 da Joseph Liouville (Saint Omer, 1809 - Parigi, 1882). Egli infatti dimostrò l'esistenza dei numeri trascendenti, affermando che ogni numero della forma
+\begin{align*}
+\frac{a_1}{10} + \frac{a_1}{10^{2!}} + \frac{a_1}{10^{3!}} + \cdots  
+\end{align*}
+\noindent
+con ${a_i}$ numeri interi arbitrari, compresi fra $0$ e $9$, è trascendente. 
+\\
+A questo punto si presenta il secondo protagonista della storia dei numeri trascendenti, Charles Hermite (Dieuze, 1822 - Parigi, 1901), il quale, tentando di dimostrare la trascendenza di $\pi$, giunse nel 1873 a dimostrare la trascendenza del numero di Nepero.
+Dopo questo successo scrisse in una lettera indirizzata al collega tedesco Carl Wilhelm Brochardt (Berino, 1817 - Ruedesdorf 1880) le seguenti parole:\footnote{Da \cite{kline} pag. $1146$. }
+
+\begin{center}
+\emph{ \lq\lq Non oso tentare di dimostrare la trascendenza di $\pi$. Se altri ci riusciranno, nessuno sarà più felice di me per il loro successo, ma credimi, caro amico, ciò non mancherà di costare loro qualche sforzo.\rq\rq }
+\end{center}
+
+L'artefice della felicità di Hermite, fu Carl Louis Ferdinand von Lindemann (Hannover, 1852 - Gottinga, 1939), che nel 1882 scoprì la trascendenza di $\pi$. Egli arrivò a dimostrare che se $x_1, x_2, \dots x_n$ sono numeri algebrici distinti, reali o complessi, e se $p_1, p_2, \dots p_n$ sono numeri algebrici non tutti nulli, allora la somma
+\begin{align*}
+p_1 e^{x_1} + p_2 e^{x_2} + \cdots + p_n e^{x_n}  
+\end{align*}
+\noindent
+è sempre diversa da zero. Da tale fatto, per $n = 2$, $p_1 = p_2 = 1$ e $x_2 = 0$ si ha 
+\begin{align*}
+e^{x_1} + 1 \neq 0  
+\end{align*}
+\noindent
+per ogni $x_1$ algebrico. Ma per la formula di Eulero $e^{i\pi} + 1 = 0$ si ha che $i\pi$ deve essere trascendente, e dato che $i$ è algebrico, si ha che $\pi$ deve essere trascendente\footnote{Per la dimostrazione completa della trascendenza di $e$ e $\pi$, vedere ad esempio \cite{Stewart} Teorema $6.4$ di pag. $72$, oppure \cite{Baker} pag. $6$. }.
+Tale dimostrazione di teoria dei numeri, assieme alla teoria dei campi applicata alle costruzioni con riga e compasso, ha risolto definitivamente il problema della quadratura del cerchio che aveva tenuto occupati i matematici di ogni epoca.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% SEZIONE
+\section{Quadratura del cerchio} \label{quadratura}
+Preso un cerchio di raggio $r$ e area $a = \pi r^2$, si vuole costruire un quadrato della stessa area. Possiamo sempre porre $r = 1$ utilizzando l'unità di misura $r$ come il segmento di lunghezza $P_0 P_1$ da cui $a = \pi$. Per risolvere il problema, si deve allora costruire un segmento di lunghezza $\sqrt{\pi}$ ma dato che, come visto in \ref{trascendenzapi}, $\pi$ è trascendente, si ha che non appartiene a nessun ampliamento di $\mathbb{Q}$ avente grado una potenza di due. Non è quindi costruibile.
+
+%%%%%%%%%%%%%%%%%%%%%% SEZIONE
+\section{Rettificazione della circonferenza}
+In analogia con il problema \ref{quadratura} sulla quadratura del cerchio, si può chiedere di risolvere con riga e compasso il seguente problema: data una circonferenza di raggio $r$ e lunghezza $h = 2\pi r$ si richiede la costruzione di un segmento di lunghezza pari ad $h$. Possiamo sempre porre $r = 1$ utilizzando l'unità di misura $r$ come il segmento di lunghezza $P_0 P_1$, da cui si ha $h = 2\pi$. Ma anche in questo caso, come nel precedente, il segmento di lunghezza $2\pi$ non è costruibile, in virtù della trascendenza di $\pi$.
+
+
+
+
+
+
+
+
+
+
+
+

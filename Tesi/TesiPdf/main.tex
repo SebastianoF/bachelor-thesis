@@ -1,0 +1,317 @@
+\documentclass[a4paper,11pt,oneside]{report} 
+
+\usepackage[italian]{babel}
+\usepackage{euscript}
+\usepackage[utf8]{inputenc}
+
+%spaziatura linee (opzionale)
+%\linespread{1.2}
+
+
+%%pacchetto per l'inclusione di figure postscript
+\usepackage{graphics}
+%%pacchetto per l'inclusione di figure eps
+\usepackage[dvips]{graphicx}
+
+%%comando per l'inserimento dell'intestazione
+\pagestyle{headings} \makeatletter
+
+%%pacchetto per l'inserimento di pezzi di codice
+\usepackage{verbatim}
+
+%%pacchetto per l'intestazione carina (riga sotto l'intestazione)
+%\begin{comment}
+\usepackage{fancyhdr}
+%\input{fancyhdr.sty}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{}}
+\lhead{} \rhead{} \chead{\emph{\leftmark}}
+%\end{comment}
+\makeatother
+
+%package per inserire figure affiancate
+\usepackage{subfigure}
+
+
+\usepackage{makeidx}
+\usepackage{eurosym}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{comment}
+\usepackage{enumerate}
+
+\usepackage{mathrsfs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Definizione teoremi: $%%%%%
+
+\newtheorem{definizione}{Definizione}[section]
+\newtheorem{esempio}{Esempio}[section]
+\newtheorem{osservazione}{Osservazione}[section]
+\newtheorem{lemmax}{Lemma}[section]
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{prop}{Proprietà}[section]
+\newtheorem{corollario}{Corollario}[section]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%INIZIO FRONTESPIZIO
+\begin{titlepage}
+
+\pagestyle{empty}
+\begingroup
+% INTESTAZIONE
+\vspace*{-7\topskip}
+
+
+%  FIGURA!%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[!h]
+%%centrare
+%\begin{center}
+%%resize in cm
+%\resizebox{1.5 cm}{2.0 cm}{\includegraphics{SquadraCompasso.jpg}} %1.5 2.5
+%\end{center}
+%\end{figure}
+
+\vspace{3 cm}
+%%%titolo
+
+\centering \expandafter{\Large{UNIVERSITA' DEGLI STUDI DI TORINO}\par}
+\begin{center}
+        \LARGE{\rm\expandafter{Facoltà di Scienze Matematiche Fisiche Naturali}}\par
+        \large\expandafter{Corso di Laurea in Matematica}\par
+\end{center}
+
+%\vspace{0.5cm}
+\begin{center}
+        {\LARGE{Tesi di Laurea Triennale}\par}
+\end{center}
+
+% TITOLO
+\vspace{1cm}
+\begin{center}
+        {\huge\bf \baselineskip=0.95em plus 1pt \expandafter{
+        Tre problemi impossibili
+        \par}}
+\end{center}
+
+%\vspace{1cm}
+%RELATORE
+%\begin{center}
+        %{\rm{Laureando}}\\
+    %    {\large\textbf{Sebastiano Ferraris}}
+%\end{center}
+
+%\vspace{2.5cm}
+
+\vspace{1cm}
+\begin{figure}[!h]
+%centrare
+\begin{center}
+%resize in cm
+\resizebox{4.0 cm}{4.0 cm}{\includegraphics{unito.jpg}} %1.5 2.5
+\end{center}
+\end{figure}
+\vspace{1cm}
+
+
+
+\begin{tabular}{c p{3.3cm}c c}
+
+
+
+Relatore & & Laureando \\
+Prof.ssa \textbf{Daniela Romagnoli} & & \textbf{Sebastiano Ferraris}\\
+{\small Università di Torino} & & { }\\
+
+\end{tabular}
+\vspace{1 cm}
+
+%CHIUSURA
+%\vspace{0.5cm}
+\begin{center}
+\large{Sessione di marzo 2010 \\ Anno Accademico 2008-2009}
+\end{center}
+\par
+\vfill\par 
+\clearpage
+\endgroup
+
+
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%% FINE FRONTESPIZIO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\pagenumbering{Roman} \nonumber \pagestyle{empty}
+
+\qquad
+ \pagestyle{empty}
+\newpage
+
+%\pagenumbering{Roman} %\pagestyle{empty} %%%%%%% Citazione
+\begin{flushright}
+\vspace*{3cm}
+\emph{ \lq\lq Gli uomini ricercano le cose che ignorano: così in geometria non sulla diagonale, che è nota, si fanno ricerche, ma sulla misura rispetto alle superfici che essa divide; non sul cubo, ma sulla sua reduplicazione. \rq\rq \\ - Platone, Simposio -}
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%   saltapagina        %
+
+\qquad
+ \pagestyle{empty}
+\newpage
+\qquad
+ \pagestyle{empty}
+\newpage
+
+%%%%%%%%%%%%  SOMMARIO
+
+
+\pagenumbering{Roman}
+\input{0pref}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%% INDICE             %
+
+\pagestyle{fancy}  %\pagenumbering{Roman}
+ \tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%   saltapagina        %
+
+\qquad
+ \pagestyle{empty}
+\newpage
+\qquad
+\pagestyle{empty}
+\newpage
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% CAPITOLI     %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\pagestyle{fancy} \pagenumbering{arabic}
+
+
+\input{1cap.tex}
+
+\input{2cap.tex}
+
+\input{3cap.tex}
+
+\input{4cap.tex}
+
+%\input{5cap.tex}
+
+\input{App.tex}
+
+
+
+%%%%%%%%%%%%% BIBLIOGRAFIA  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{thebibliography}{21}
+
+\bibitem{Artin}
+Michael Artin, \emph{Algebra}, Prentice Hall of India, New Delhi 2007 
+
+\bibitem{Baker}
+Alan Baker, \emph{Transcendental Number theory}, Cambridge univesity press 1990, prima ed. 1975.
+
+\bibitem{Dante}
+Dante Alighieri, \emph{La Divina Commedia}, Einaudi 1954.
+
+\bibitem{Boyer}
+Carl B. Boyer, \emph{Storia della matematica}, Mondadori 2005, prima ed. 1976.
+
+\bibitem{kline}
+Morris Kline \emph{Storia del pensiero matematico, dal settecento ad oggi}, volume secondo, Einaudi editore 1991.
+
+\bibitem{Kosh}
+Thomas Koshy, \emph{Elementary Number Theory with applications}, Accademic Press, Elzevier, 2007.
+
+\bibitem{Livio}
+Mario Livio, \emph{L'equazione impossibile}, BUR 2007, prima ed. 2006.
+
+\bibitem{Shea}
+Donald O'Shea, \emph{La congettura di Poincarè}, BUR, Milano 2007.
+
+\bibitem{cattaneo}
+Giulia Maria Piacentini Cattaneo, \emph{Algebra, un approccio algoritmico}, Zanichelli 2007, prima ed. 1996.
+
+\bibitem{Plato}
+Platone, \emph{Dialoghi}.
+
+\bibitem{Procesi}
+Claudio Procesi, \emph{Elementi di teoria di Galois}, Zanichelli 2008, prima ed. 1977.
+
+\bibitem{Rogg}
+Margherita Roggero, \emph{Appunti ed esercizi di Matematica Discreta}, Quaderni didattici dell'Università di Torino, 2005.
+
+\bibitem{Russo}
+Lucio Russo, \emph{La rivoluzione dimenticata: il pensiero scientifico greco e la scienza moderna}, Feltrinelli Milano 1997.
+
+\bibitem{Shanks} 
+Daniel Shanks \emph{Solved and unsolved problems in Number Theory }, AMS 1993, prima ed. 1962
+
+\bibitem{Stewart}
+Ian Stewart, \emph{Galois Theory}, Chapman and Hall 1973, prima ed. 2006.
+
+\bibitem{sitowolfram}
+Dal Web: sito della Wolfram Research, pagina sulla costruzione dell'eptadecagono:  \begin{verbatim} http://mathworld.wolfram.com/Heptadecagon.html \end{verbatim}
+
+\bibitem{sitoroi}
+Dal Web: sito del prof. Lorenzo Roi, pagina sulla costruzione del decagono e dell'eptadecagono: \begin{verbatim} http://www.lorenzoroi.net/geometria/Poligoni.html \end{verbatim}
+
+\bibitem{sito3}
+Da Wikipedia, sulla trisezione dell'angolo: \begin{verbatim} http://it.wikipedia.org/wiki/Trisezione_dell'angolo \end{verbatim}
+
+\bibitem{sito2}
+Da Wikipedia, sul problema di Delo: \begin{verbatim} http://it.wikipedia.org/wiki/Problema_di_Delo \end{verbatim}
+
+\bibitem{sito2}
+Da Wikipedia, sulla quadratura del cerchio: \begin{verbatim} http://it.wikipedia.org/wiki/Quadratura_del_cerchio \end{verbatim}
+
+\bibitem{sito4}
+Da Wikipedia, sulla costruzione dell'eptadecagono: \begin{verbatim} http://it.wikipedia.org/wiki/Eptadecagono \end{verbatim}
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
